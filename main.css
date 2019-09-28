@@ -15,7 +15,7 @@ logotohome img{
 figure {
     display: inline-block;   /* インラインブロック化 */
     margin: 0px 3px 7px 0px; /* 外側に余白を追加(※右に3px・下に7px) */
-    background-color: #efefef; 
+    background-color:#e8e2be; 
 }
 figure img {
     display: block;          /* 余計な余白が出ないようにする */
@@ -41,7 +41,7 @@ html, body {
 	color: #393939;
     margin-left: 15px;
     margin-bottom: 40px;
-	background: #efefef;
+	background:#e8e2be;
 }
 h1{
     text-indent: 0em;
