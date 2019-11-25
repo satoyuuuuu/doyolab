@@ -68,6 +68,34 @@
      と表示される。</p>
     <h2>・Tkinterを用いてGUIを作る</h2>
     <p>TkinterとはPythonに標準搭載されている、簡単にGUIを組むことのできるツールキットです。<br>
-    すぐに書きます。。</p>
+    <h3>ウインドウサイズを変更</h3>
+    <p>表示するウインドウのサイズを変更する。一般的なモニターの画面サイズはHDサイズ(1280×720)なので今回はHDサイズにします。<br>
+        <br>
+        <b>root.geometry('1280x720')</b>
+    <h3>ラベルを配置する</h3>
+    <p>Python上でのラベルというのは、文字のテキストやボタンの役割を果たすモノのことを指します。<br><br>
+        <b>Static1 = tk.Label(text=u'test')<br>
+            Static1.pack()</b><br><br>
+        ラベルをウインドウ上の好きな場所にするのはplaceに変えると可能である。<br><br>
+        <b>Static1.place(x=200, y=300)</b>
+    <h3>Entryを表示する</h3>
+    <p>Entryとはユーザーが情報を入力することができる部分である。<br><br>
+        <b>Entry1 = tk.Entry()<br>
+            Entry1.pack()</b><br>
+    <h3>Entryに表示してある情報を取得する</h3>
+    <p>ユーザーがEntryに入力した情報を実際に取得する。取得後にどういう動作するかはまた後に記載する。<br><br>
+        <b>Entry1_value = Entry1.get()<br>
+print(Entry1_value)</b><br>
+    <h3>ボタンを設置する</h3>
+    <p>ユーザーが実際に選択や確定を実行するためのボタンを設置する。<br><br>
+        <b>Button1 = tk.Button(text=u'確定')<br>
+            Button1.pack()</b><br><br>
+        ボタンを押した後に何かを実行させる(今回は押したらEntryの中身を消す)<br><br>
+        <b>Button1.bind("＜Button-1＞", deleteEntry)<br>
+Button1.pack()
+</b>
+        
+    
+</p>
 
 </body>
