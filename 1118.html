@@ -127,10 +127,8 @@
 		<img src="images/processing1-8.png">
 	<h3>→解決 (決まった文字をクリックと同時に入力する)</h3>
 		<p>上記が実行できなかった原因<br>
-			①void setupにて繰り返しのfor文を使ってvoid keyPressedを繰り返そうとしていたが、for文の使い方を誤っていた。(こういう場合に使わない)<br>
-			②void keyPressed以下のif文もこのようなところでは使わない。<br>
-			③printlnで変数moziをキーが押されたら表示するという単純な文で大丈夫だった。<br>
-			④ハローのスペルが間違っていた。
+			①printlnで変数moziをキーが押されたら表示するという単純な文で大丈夫だった。<br>
+			②ハローのスペルが間違っていた。
 			<br><img src="images/processing1-9.png">
 	</p>
 	<h2>●jpegのスライドと文字を表示させる二つの機能を一画面で同時に行わせる</h2>
@@ -145,7 +143,9 @@ The file [ファイル名] is missing or inaccessible, make sure the URL is vali
 		<b>考察</b><br>
 		①「text(chat[mozi], 900, 100);」が原因か？<br>
 		② jpegのスライドではifによる繰り返しが行われているが、テキストの場合は繰り返しが行われておらず、そこで失敗している可能性<br>
-		　(テキストエリアにて1,2,3,4,5以降にこのメッセージが表示されているため)
+		　(テキストエリアにて1,2,3,4,5以降にこのメッセージが表示されているため)<br>
+		→<b>ArrayIndexOutOfBoundsException</b>というエラーはjavaなどでよく出るエラーで、配列のインデックスとして存在しない要素を指定した場合に発生するエラー。<br>
+		1から10のインデックスしかないところ、20のインデックスに値を設定しようとする場合などに発生する。
 	<h3>・１度一言コメントだけ表示させてみる</h3>
 	<p>考察②を潰すために、クリックと同時にいくつものコメントを表示させるのはなく一言だけ表示できるか試してみる。<br>
 		テキストを表示させるには <b>text()関数</b> を用いる。キーを押すと命令が実行される<b>keyPressed</b>を使用する。<br>
@@ -153,5 +153,34 @@ The file [ファイル名] is missing or inaccessible, make sure the URL is vali
 		<img src="images/processing1-14.png"><br>
 		実行すると、本来やりたかったマウスクリックでスライドの移動とキークリックで文字の表示ができた。<br>
 		つまり、考察②のテキストの繰り返し関係が上手に機能していないことが明らかになった。
-	</p>
+	<h3>・キーボードクリックの文字表示を解決する</h3>
+	<p>道用先生がこの考察②を解決していただいたので、自分の言葉で読み取っていきます。<br>
+		<img src="images/processing1-15.png"><br>
+		<a href="file/kakeawase.pde">pdeファイルをdownload</a>　←ここからソースコードをpdeファイルでdownloadできます。
+	<h3>・問題点と解決</h3>
+	<p><b>int mozi = =1</b>
+		<b>void draw()<br>
+		   if (mozi>-1)</b><br>
+			→変数moziを宣言し、その中に-1を代入する。これによりif文を使えるようにする。<br><br>
+		<b>int strY = 70</b><br>
+		→前回までの一言コメントを出すだけのtextでは一つずつにY座標を指定していたので、変数として位置づけることによって、連続して文字が表示された時に順に下に表示されるようになった。
+	<h2>●split()を用いて文字列を分割して表示する</h2>
+	<p>これまで文字の表示の仕方は、<b>配列</b>の中に言葉を一つずつ入れていき順番に表示する仕組みだったが、今後のサーバー上で文字を拾ってきて表示することを考えて、<b>split()</b>を使えるようにする。<br><br>
+		<b>split()</b>：文字列を指定された正規表現に一致する位置で分割する。<br><br>
+		
+		String str = "りんご,レモン,すいか,ぶどう";<br>
+		String[] fruit = str.split(",", 0);<br><br>
+		これを実行すると、<br>
+		fruit[0] = "りんご";<br>
+		fruit[1] = "レモン"; ...以下略<br><br>
+		
+		このように、対象となる文字列を指定した区切り文字によって分割してそれぞれを配列の要素として格納する。
+	<h3>・これまでできたスケッチにsplitを使ってみる。</h3>
+	<p>今までは、String[] chat = {"HELLO", "THANK","I Love U","SatoYuto"};　と、文字をダブルクォーテーションでくくっていたが、<b>セミコロンで文字をつないで</b>スケッチしてみる。<br><br>
+		String str = "THANK, YOU, Hello, Good, I LOVE U";<br>
+		String[] chat = str.split(",", 0);<br><br>
+		これにより一文でつないだ文がダブルクォーテーションでくくってあるものを一つの配列の要素として取り出してくれている。<br><br>
+		<img src="images/processing1-16.png"><br><br>
+		<a href="file/sketch_split.pde">pdeファイルをdownload</a>
+	
 </body>
