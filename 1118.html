@@ -128,7 +128,8 @@
 	<h3>→解決 (決まった文字をクリックと同時に入力する)</h3>
 		<p>上記が実行できなかった原因<br>
 			①printlnで変数moziをキーが押されたら表示するという単純な文で大丈夫だった。<br>
-			②ハローのスペルが間違っていた。
+			②ハローのスペルが間違っていた。<br>
+			→追記(12/20) 上のプログラムが動かなかったのは、keyPressedのkが大文字になっていたからと判明。(道用先生ご指摘ありがとうございます。)
 			<br><img src="images/processing1-9.png">
 	</p>
 	<h2>●jpegのスライドと文字を表示させる二つの機能を一画面で同時に行わせる</h2>
@@ -182,5 +183,8 @@ The file [ファイル名] is missing or inaccessible, make sure the URL is vali
 		これにより一文でつないだ文がダブルクォーテーションでくくってあるものを一つの配列の要素として取り出してくれている。<br><br>
 		<img src="images/processing1-16.png"><br><br>
 		<a href="file/sketch_split.pde">pdeファイルをdownload</a>
-	
+	<h2>●loadStrings()を用いて、ファイルやURLから文字列を表示する</h2>
+	<p><b>loadStrings()</b>：ファイルの内容かurlを読み込み、各々の行の文字の配列をつくる。<br><br>
+	サーバーのやりとりによるリアルタイムのチャットシステム実現のために、まずはインターネットから文字を拾ってくるだけの方法を挑戦してみる。<br><br>
+		
 </body>
