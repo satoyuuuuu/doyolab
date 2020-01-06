@@ -189,5 +189,19 @@ The file [ファイル名] is missing or inaccessible, make sure the URL is vali
 	<h3>・まずはloadStringsだけの簡単なスケッチを描いてみる</h3>
 	<p>構文として、<b>String[]  line  =  loadStrings( String  URL );</b><br>
 		loadStringsの後に参照するURLやデータ名を書くことにより、その中に表示されているテキストデータを拾ってきてくれる。
-	<img src="images/processing1-18.png">	
+	<img src="images/processing1-18.png"><br>
+		※URLはそのHPがハッキングされる可能性があるため非表示
+	<h3>・loadStringで読み込んだ文字列をsplitで分割する</h3>
+	<p>以前まではStringの配列の中に "THANK, YOU, Hello, Good, I LOVE U" のような一文をスケッチし、splitでコンマ（,）で一言に区切って表示させていたが、<br>
+		今回はいよいよ<b>loadString</b>を使いインターネットのページからテキストを取り出してくる。<br>
+	<img src="images/processing1-19.png"><br>
+	すると、java.lang.reflect.InvocationTargetExceptionというエラーが発生する。<br>
+	<img src="images/processing1-20.png"><br><br>
+		InvocationTargetException は日本語訳で<b>呼び出し対象例外</b>の訳である。<br><br>
+		考えられる原因<br>
+		①呼び出し対象外ということなのでloadStringの位置がvoid setup()の位置にするべきなのか→違かった<br>
+		②reflect？？
+	
+	
+	</p>
 </body>
