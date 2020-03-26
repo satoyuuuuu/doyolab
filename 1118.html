@@ -17,7 +17,9 @@
 
     <!--h1は見出し１（大見出し）-->
     <h1>Processing学習の足跡</h1>
+	<p>Processingで行なったことをズラズラと研究ノートとして書いていきます。</p>
     <h2>●Processingとはどんなもの</h2>
+	<p><img src="images/prpcessing.logo.png">
     <p><b>Processing（プロセシング）</b>：電子アートとビジュアルデザインのためのプログラミング言語であり、統合開発環境である。<br>
         アーティストによるコンテンツ制作作業のために、詳細な設定を行う関数を排除している。 視覚的なフィードバックが即座に得られるため、<br>
         初心者がプログラミングを学習するのに適しており、電子スケッチブックの基盤としても利用できる。Javaを単純化し、グラフィック機能に特化した言語といえる。（Wikipedia)<br><br>
@@ -204,9 +206,22 @@ The file [ファイル名] is missing or inaccessible, make sure the URL is vali
 	<h3>・解決策</h3>
 	<p><img src="images/processing1-21.png"><br>
 	<img src="images/processing1-22.png"><br>
-	<a href="file/sketch_loadstrings.pde">pdeファイルをdownload</a>	(URLは非表示になっています)<br><br>
-		
-		後でまとめて記述します。。
+	<a href="file/sketch_loadstrings.pde">pdeファイルをdownload</a>	(URLは非表示になっています)
+	<h2>●doyo先生修正のアウトラインから読み取っていく</h2>
+	<h3>・ 宣言 StringList 変数名;</h3>
+	<p>変数名 = new Strings(); これを用いることにより指定した位置の値を取得することができる(戻り値にStringを使った場合)<br>
+	また戻り値に append(String); を使うことで値を追加することができる。<br>
+	イメージとして抜いたら付け足せるダルマ落とし</p>
+	<h3>・try文</h3>
+	<p>try-catch文とは、例外が発生する可能性がある処理に使うもの。try-catch文を使うことで、例外が発生しない場合の処理と例外が発生した時の処理を分けることができる。<br>　<br>
+	例外処理とは、実行停止してはいけないプログラムに何らかのエラーが発生しておきた場合や、途中で問題が発生した場合、その後の処理を自分でコントロールしたいなどの状態を指す。</p>
+	<h3>・try-catch文の使い方</h3>
+	<p>try-catch文の使い方は、tryブロックの中に例外が発生する可能性のある処理を記述し、<br>
+		catchブロックの中に例外が発生した後の処理を記述する。<br><br>
+	先生のアウトラインから、catchブロックの中に例外が発生した後の処理を記述していないことから、<br>
+		エラーが起こった後も再び前の処理をさせる「スルー」の処理をしている。(ように見える、、)
+	</p>
+	
 	
 	</p>
 </body>
